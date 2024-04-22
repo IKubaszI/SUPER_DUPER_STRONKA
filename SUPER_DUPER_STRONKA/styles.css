@@ -1,0 +1,183 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #FF007A, #2E879B) no-repeat;
+  background-size: 120% 120%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  float: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 200px; 
+
+}
+
+.text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 230px; 
+}
+
+  .text-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 260px; 
+  
+}
+.button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 100%;
+  width: calc(10.33% ); /* 33.33% szerokości kontenera minus dwa razy odstęp */
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+   overflow: hidden; /* Ukrywamy obrazki, które mogłyby wystawać poza obszar przycisku */
+  position: relative; /* Ustawiamy pozycję względną, aby móc zastosować absolutne pozycjonowanie dla obrazka */
+
+}
+
+.button:hover {
+  background-color: #0069d9;
+}
+.button img {
+  width: 100%; /* Obrazki zajmują całą dostępną szerokość przycisku */
+  height: 100%; /* Obrazki zajmują całą dostępną wysokość przycisku */
+  border-radius: 50%; /* Zaokrąglamy obrazki */
+  position: absolute; /* Ustawiamy pozycję absolutną, aby obrazek wypełniał przycisk */
+  top: 0; /* Ustawiamy obrazek na górze przycisku */
+  left: 0; /* Ustawiamy obrazek na lewej stronie przycisku */
+  transition: transform 0.2s; /* Dodajemy animację */
+}
+
+.button:hover img {
+  transform: scale(1.1); /* Powiększamy obrazek przy najechaniu myszą */
+}
+
+.red {
+  background-color: #dc3545;
+}
+
+.red:hover {
+  background-color: #c82128;
+}
+
+.dollar-button {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  float: left;
+}
+
+.dollar-button:hover {
+  background-color: #bd212d;
+}
+.red {
+  background-color: #dc3545;
+}
+
+.red:hover {
+  background-color: #c82128;
+}
+
+.dollar-button {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dollar-button:hover {
+  background-color: #bd212d;
+}
+
+.red {
+  background-color: #dc3545;
+}
+
+.red:hover {
+  background-color: #c82128;
+}
+
+.dollar-button {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dollar-button:hover {
+  background-color: #bd212d;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-left {
+  flex-basis: 30%;
+}
+
+.footer-center {
+  flex-basis: 40%;
+  text-align: center;
+}
+
+.footer-right {
+  flex-basis: 30%;
+  text-align: right;
+}
