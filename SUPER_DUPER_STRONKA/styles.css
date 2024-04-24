@@ -20,13 +20,15 @@ h1 {
   text-align: center;
   margin-bottom: 2rem;
   color: #333;
+
 }
 
 .buttons-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 200px; 
+  padding: 0 200px;
+
 
 }
 
@@ -34,18 +36,18 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 230px; 
+  padding: 0 230px;
 }
 
-  .text-container2 {
+.text-container2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 260px; 
-  
+  padding: 0 260px;
+
 }
 .button {
-  background-color: #007bff;
+  background-color: #ffffff  ;
   color: white;
   border-radius: 100%;
   width: calc(10.33% );
@@ -55,7 +57,7 @@ h1 {
   justify-content: center;
   text-decoration: none;
   transition: background-color 0.2s;
-   overflow: hidden;
+  overflow: hidden;
   position: relative;
 
 }
@@ -138,18 +140,28 @@ h1 {
 }
 
 .dollar-button {
-  background-color: #dc3545;
-  color: white;
+  background-color: #f0a30a;
+  color: black;
+  border: 2px solid black;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 85px;
+  height: 85px;
   display: flex;
   align-items: center;
+  border: 4px solid black;
   justify-content: center;
   margin-left: 2rem;
   text-decoration: none;
-  transition: background-color 0.2s;
+  transition: background-color 0.5s, border-color 0.5s;
+  position: fixed;
+  top: 10px;
+  font-size: 45px;
+  font-weight: bold;
+  right: 10px;
 }
+
+
+
 
 .dollar-button:hover {
   background-color: #bd212d;
@@ -160,12 +172,12 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f7f7f7;
-  border-top: 1px solid #ddd;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .footer-left {
@@ -180,4 +192,75 @@ h1 {
 .footer-right {
   flex-basis: 30%;
   text-align: right;
+}
+.centered-header {
+  text-align: center; /* Wyśrodkowanie tekstu */
+  color: white; /* Biały kolor tekstu */
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  font-size: 50px;
+}
+
+
+.wszystko {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: white; /* Biały kolor tekstu */
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  font-size: 1.1rem; /* This ensures that children occupy the full width */
+  font-size: 30px;
+}
+
+.wstep, .kontynuacja {
+  margin: 0;
+  padding: 20px 0; /* Adjust the vertical padding to create more space */
+  flex: 1; /* This will make them stretch to fill the parent container */
+  text-align: justify; /* This ensures the text is spread out from edge to edge */
+}
+
+.wstep + .kontynuacja {
+  margin-top: 50px; /* This adds a large space between the `wstep` and `kontynuacja` sections */
+}
+.profile-container {
+  display: flex;
+  justify-content: space-evenly; /* Adjust spacing between profiles */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the content vertically */
+  margin: 0 10px; /* Space between the profiles */
+}
+
+.image-emoji-container {
+  display: flex;
+  align-items: center; /* Aligns image and emoji horizontally */
+}
+
+.profile-pic {
+  border: 3px solid white; /* White border around the image */
+  border-radius: 50%; /* Circular image */
+  width: 150px; /* Image width */
+  height: 150px; /* Image height */
+  object-fit: cover;
+
+}
+
+.profile-pic:hover img {
+  transform: scale(1.1);
+}
+
+.emoji {
+  font-size: 1.5rem; /* Emoji size */
+  margin-left: -100px;
+  margin-right: -100px;
+  font-size: 3rem;
+
+  /* Negative margin to pull the emoji closer to the image */
+}
+
+.name {
+  margin-top: 10px; /* Space between image/emoji container and name */
+  font-size: 3rem; /* Name font size */
 }

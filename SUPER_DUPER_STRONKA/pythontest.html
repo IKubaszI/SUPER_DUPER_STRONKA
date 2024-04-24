@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0E5ED6, #9A9C3B);
+      background-size: 120% 120%;
+      min-height: 100vh;  
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    h1 {
+      font-size: 36px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .menu-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #FF9900;
+      color: black;
+      border: 4px solid black;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 18px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 2rem;
+      transition: background-color 0.2s;
+      float: left;
+    }
+    
+    .menu-button:hover {
+      background-color: #bd212d;
+    }
+    
+    .question {
+      margin-top: 40px;
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .answer {
+      margin-top: 20px;
+      font-size: 18px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 2px solid #FF9900;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    
+    .button-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #FF9900;
+      color: black;
+      border: 3px solid black;
+      border-radius: 5px; /* Zaokrąglenie przycisku */
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 10px;
+    }
+    
+    .button:hover {
+      background-color: #bd212d;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>Python Test</h1>
+     <a href="menu.html" class="menu-button">&#9776;</a>
+  </div>
+  
+  <div class="question">
+    <p>Pytanie nr 1</p>
+  </div>
+  
+  <div class="answer">
+    <label><input type="radio" name="answer1" value="A"> A</label><br>
+    <label><input type="radio" name="answer1" value="B"> B</label><br>
+    <label><input type="radio" name="answer1" value="C"> C</label><br>
+  </div>
+  
+  <div class="question">
+    <p>Pytanie nr 2</p>
+  </div>
+  
+  <div class="answer">
+    <input type="text" name="answer2">
+  </div>
+  
+  <div class="button-container">
+    <button class="button" onclick="clearForm()">Wyczyść</button>
+    <button class="button" onclick="checkAnswers()">Sprawdź</button>
+  </div>
+</div>
+
+<script>
+  function clearForm() {
+    document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+    document.querySelector('input[type="text"]').value = '';
+  }
+  
+  function checkAnswers() {
+    const answer1 = document.querySelector('input[name="answer1"]:checked');
+    const answer2 = document.querySelector('input[name="answer2"]').value.toLowerCase();
+    
+    const correctAnswer1 = 'B';
+    const correctAnswer2 = 'html';
+    
+    if (answer1 && answer2) {
+      if (answer1.value === correctAnswer1 && answer2 === correctAnswer2) {
+        alert('Odpowiedzi są poprawne!');
+      } else {
+        alert('Odpowiedzi nie są poprawne. Spróbuj ponownie.');
+      }
+    } else {
+      alert('Proszę udzielić odpowiedzi na wszystkie pytania.');
+    }
+  }
+</script>
+
+</body>
+</html>
