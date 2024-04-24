@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Language</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0E5ED6, #9A9C3B);
+      background-size: 120% 120%;
+      min-height: 100vh;
+    }
+  
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative; /* Dodane, aby można było pozycjonować fajerwerki względem kontenera */
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 50px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .info img {
+      max-width: 200px;
+      border-radius: 50%;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-right: 20px;
+    }
+
+    .info-text {
+      flex-grow: 1;
+    }
+
+    .code-section {
+      display: flex;
+      margin-top: 50px;
+    }
+
+    .code-input,
+    .code-output {
+      flex-grow: 1;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .code-output {
+      margin-left: 20px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+     .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.3s ease; /* Dodane powolne przejście koloru tła */
+    }
+
+.btn2 {
+      display: inline-block;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      background-color: #0066FF;
+      color: white;
+      transition: background-color 0.3s ease; /* Dodane powolne przejście koloru tła */
+    }
+
+    .btn:hover {
+      background-color: #FF5733; /* Kolor tła po najechaniu */
+    }
+
+    .btn2:hover {
+      background-color: #FF5733; /* Kolor tła po najechaniu */
+    }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <h1>Python</h1>
+    <h2>Informacje na temat języka</h2>
+  </header>
+
+  <div class="info">
+    <img src="autor.png" alt="Author">
+    <div class="info-text">
+      <p>Tutaj znajdziesz informacje o języku Python.</p>
+      <p>Python to dynamiczny, wysokopoziomowy język programowania, który jest szeroko stosowany w różnych dziedzinach, w tym web development, data science, sztuczna inteligencja i wiele innych.</p>
+    </div>
+  </div>
+
+  <h2>Przydatne informacje na temat kodu</h2>
+
+  <div class="code-section">
+    <textarea id="codeInput" class="code-input" placeholder="Wpisz swój kod tutaj"></textarea>
+    <div id="codeOutput" class="code-output">Tutaj będzie wyświetlony wynik Twojego kodu.</div>
+  </div>
+
+<script>
+  // Funkcja wywołująca animację fajerwerków
+  function fireworks() {
+    // Pobranie elementu div z animacją fajerwerków
+    const fireworksDiv = document.getElementById('fireworks');
+    // Dodanie klasy 'fireworks' do diva, co wywoła animację
+    fireworksDiv.classList.add('fireworks');
+  }
+
+  // Funkcja sprawdzająca kod
+  function submitCode() {
+    const codeInput = document.getElementById('codeInput');
+    const codeOutput = document.getElementById('codeOutput');
+
+    // Wyczyszczenie poprzedniego wyniku
+    codeOutput.innerText = '';
+
+    // Pobranie kodu wpisanego przez użytkownika
+    const userCode = codeInput.value;
+
+    try {
+      // Wykonanie kodu Pythona
+      const result = eval(`(function(){${userCode}})()`);
+      // Wyświetlenie wyniku w polu wyjściowym
+      codeOutput.innerText = result;
+    } catch (error) {
+      // Obsługa błędów
+      codeOutput.innerText = `Błąd: ${error}`;
+    }
+  }
+</script>
+<div class="container">
+   <button class="btn2" onclick="submitCode()">Sprawdź swoj kod</button>
+
+  <button class="btn">Rozpocznij test mistrzu</button>
+</div>
+</body>
+</html>
