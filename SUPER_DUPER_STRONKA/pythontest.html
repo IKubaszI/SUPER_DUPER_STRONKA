@@ -176,6 +176,8 @@
         <button type="button" onclick="checkAnswers()" class="button">Sprawdź</button> 
       <p id="result"></p>
     <p id="result"></p>
+    <p id="result2"></p>
+    <p id="result2"></p>
   </div>
 </div>
 
@@ -231,8 +233,8 @@ function checkAnswers() {
     document.getElementById("result").style.color = "green";
     
     if(correctAnswers == 3){
-       var popup = document.getElementById("popup");
-    popup.style.display = "block";
+        document.getElementById("result2").innerHTML = "Gratuluje!! Jesteś już programistą";
+    document.getElementById("result2").style.color = "green";
     }
 
     

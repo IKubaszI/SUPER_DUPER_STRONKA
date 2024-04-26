@@ -254,3 +254,4 @@ function clearForm() {
 document.getElementById("quizForm").reset();
 }
 
+
