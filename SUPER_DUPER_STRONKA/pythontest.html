@@ -111,6 +111,22 @@
     .incorrect-answer {
       color: red;
     }
+    .button:hover {
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+    background-size: 400%;
+    animation: rainbow 4s infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+}
   </style>
 </head>
 <body>
@@ -152,7 +168,7 @@
     <input type="text" id="question3" name="question3">
     <span id="roz3"></span>
   </div>
-  
+   <div id="popup" class="popup">
   <div class="button-container">
     
     <button type="button"
@@ -162,6 +178,7 @@
     <p id="result"></p>
   </div>
 </div>
+
 </form>
 <script>
 function clearForm() {
@@ -210,9 +227,19 @@ function checkAnswers() {
     }
     
 
-    document.getElementById("result").innerHTML = "Poprawnych odpowiedzi: " + correctAnswers;
+    document.getElementById("result").innerHTML = "Uzyskane punkty: " + correctAnswers;
     document.getElementById("result").style.color = "green";
+    
+    if(correctAnswers == 3){
+       var popup = document.getElementById("popup");
+    popup.style.display = "block";
+    }
+
+    
+
+
 }
+
 </script>
 
 </body>
