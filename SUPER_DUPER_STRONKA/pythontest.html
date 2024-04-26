@@ -21,8 +21,12 @@
     }
     
     .header {
+      display: flex;
+      justify-content: space-between;
       text-align: center;
-      margin-top: 20px;
+      padding: 0 2rem;
+      box-sizing: border-box;
+      float: center;
     }
     
     h1 {
@@ -97,6 +101,15 @@
     .button:hover {
       background-color: #bd212d;
     }
+
+    /* Dodatkowy styl dla poprawnych i błędnych odpowiedzi */
+    .correct-answer {
+      color: green;
+    }
+    
+    .incorrect-answer {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -104,17 +117,19 @@
 <div class="container">
   <div class="header">
     <h1>Python Test</h1>
-     <a href="menu.html" class="menu-button">&#9776;</a>
+    <a href="menu.html" class="menu-button">&#9776;</a>
   </div>
   
   <div class="question">
     <p>Pytanie nr 1</p>
   </div>
-  
+      <form id="quizForm">
+
   <div class="answer">
-    <label><input type="radio" name="answer1" value="A"> A</label><br>
-    <label><input type="radio" name="answer1" value="B"> B</label><br>
-    <label><input type="radio" name="answer1" value="C"> C</label><br>
+    <label><input type="radio" name="question1" value="a"> A</label><br>
+    <label><input type="radio" name="question1" value="b"> B</label><br>
+    <label><input type="radio" name="question1" value="c"> C</label><br>
+    <span id="roz1"></span>
   </div>
   
   <div class="question">
@@ -122,38 +137,81 @@
   </div>
   
   <div class="answer">
-    <input type="text" name="answer2">
+    <label><input type="radio" name="question2" value="a"> A</label><br>
+    <label><input type="radio" name="question2" value="b"> B</label><br>
+    <label><input type="radio" name="question2" value="c"> C</label><br>
+    <span id="roz2"></span>
+  </div>
+
+  <div class="question">
+    <p>Pytanie nr 3</p>
+  </div>
+  
+  <div class="answer">
+    <input type="text" id="question3" name="question3">
+    <span id="roz3"></span>
   </div>
   
   <div class="button-container">
-    <button class="button" onclick="clearForm()">Wyczyść</button>
-    <button class="button" onclick="checkAnswers()">Sprawdź</button>
+    
+    <button type="button"
+        onclick="clearForm() " class="button">Wyczyść </button>
+        <button type="button" onclick="checkAnswers()" class="button">Sprawdź</button> 
+      <p id="result"></p>
+    <p id="result"></p>
   </div>
 </div>
-
+</form>
 <script>
-  function clearForm() {
-    document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
-    document.querySelector('input[type="text"]').value = '';
-  }
-  
-  function checkAnswers() {
-    const answer1 = document.querySelector('input[name="answer1"]:checked');
-    const answer2 = document.querySelector('input[name="answer2"]').value.toLowerCase();
-    
-    const correctAnswer1 = 'B';
-    const correctAnswer2 = 'html';
-    
-    if (answer1 && answer2) {
-      if (answer1.value === correctAnswer1 && answer2 === correctAnswer2) {
-        alert('Odpowiedzi są poprawne!');
-      } else {
-        alert('Odpowiedzi nie są poprawne. Spróbuj ponownie.');
-      }
-    } else {
-      alert('Proszę udzielić odpowiedzi na wszystkie pytania.');
+function clearForm() {
+    document.getElementById("quizForm").reset();
+    document.getElementById("roz1").innerHTML = "";
+    document.getElementById("roz2").innerHTML = "";
+    document.getElementById("roz3").innerHTML = "";
+    document.getElementById("result").innerHTML = "";
+}
+
+function checkAnswers() {
+    var correctAnswers = 0;
+    var correctAnswers1 = ["a"];
+    var correctAnswers2 = ["b"];
+    var correctAnswers3 = ["utf-8"];
+    var question1 = document.querySelector('input[name="question1"]:checked');
+    var question2 = document.querySelector('input[name="question2"]:checked');
+    var question3 = document.getElementById("question3").value;
+
+
+    if(question1 && correctAnswers1.includes(question1.value)) {
+        correctAnswers++;
+        document.getElementById("roz1").innerHTML = "Poprawna odpowiedź";
+        document.getElementById("roz1").style.color = "green";
+    }else{
+    document.getElementById("roz1").innerHTML = "Błędna odpowiedź";
+    document.getElementById("roz1").style.color = "red";
     }
-  }
+
+    if(question2 && correctAnswers2.includes(question2.value)) {
+        correctAnswers++;
+        document.getElementById("roz2").innerHTML = "Poprawna odpowiedź";
+        document.getElementById("roz2").style.color = "green";
+    }else{
+    document.getElementById("roz2").innerHTML = "Błędna odpowiedź";
+    document.getElementById("roz2").style.color = "red";
+    }
+
+    if(correctAnswers3.includes(question3.toLowerCase())) {
+        correctAnswers++;
+        document.getElementById("roz3").innerHTML = "Poprawna odpowiedź";
+        document.getElementById("roz3").style.color = "green";
+    }else{
+    document.getElementById("roz3").innerHTML = "Błędna odpowiedź";
+    document.getElementById("roz3").style.color = "red";
+    }
+    
+
+    document.getElementById("result").innerHTML = "Poprawnych odpowiedzi: " + correctAnswers;
+    document.getElementById("result").style.color = "green";
+}
 </script>
 
 </body>
