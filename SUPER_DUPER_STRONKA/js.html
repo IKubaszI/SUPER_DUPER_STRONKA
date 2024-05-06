@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #0E5ED6, #9A9C3B);
+            background-size: 120% 120%;
+            min-height: 100vh;
+        }
+
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .info img {
+            max-width: 200px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-right: 20px;
+        }
+
+        .info-text {
+            flex-grow: 1;
+        }
+
+        .code-section {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .code-input,
+        .code-output {
+            flex-grow: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .code-output {
+            margin-left: 20px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            text-align: center;
+
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn2 {
+            display: inline-block;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #0066FF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #FF5733;
+        }
+
+        .btn2:hover {
+            background-color: #FF5733;
+        }
+
+        .menu-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF9900;
+            color: black;
+            border: 4px solid black;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 2rem;
+            transition: background-color 0.2s;
+            float: right;
+        }
+
+        .menu-button:hover {
+            background-color: #bd212d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="menu.html" class="menu-button">&#9776;</a>
+    <header class="header">
+        <h1>Java Script</h1>
+        </h1>
+        <h2>Informacje na temat języka</h2>
+    </header>
+    <div class="info">
+        <img src="/focie/js.png" alt="Author">
+        <div class="info-text">
+            <h3> <p>JavaScript jest jednym z najpopularniejszych języków programowania na świecie.
+                Jest szeroko stosowany do tworzenia interaktywnych stron internetowych,
+                aplikacji internetowych oraz serwerów. Poniżej znajdziesz podstawowe informacje na temat tego
+                języka oraz kilka wskazówek dotyczących jego nauki i praktyki.</p> </h3>
+        </div>
+    </div>
+    <h2>Postępuj jak na filmiku aby zrozumieć tę pradawną wiedzę :)</h2>
+    <video width="320" height="240" controls>
+        <source src="sciezka/do/filmu.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje elementu video.
+    </video>
+    <h2>Przydatne informacje na temat kodu</h2>
+
+    <div class="code-section">
+        <textarea id="codeInput" class="code-input" placeholder="Wpisz swój kod tutaj"></textarea>
+        <div id="codeOutput" class="code-output">Tutaj będzie wyświetlony wynik Twojego kodu.</div>
+    </div>
+
+    <script>
+
+        function fireworks() {
+            const fireworksDiv = document.getElementById('fireworks');
+            fireworksDiv.classList.add('fireworks');
+        }
+
+        function submitCode() {
+            const codeInput = document.getElementById('codeInput');
+            const codeOutput = document.getElementById('codeOutput');
+
+            codeOutput.innerText = '';
+
+            const userCode = codeInput.value;
+
+            try {
+                const result = eval(`(function(){${userCode}})()`);
+                codeOutput.innerText = result;
+            } catch (error) {
+
+                codeOutput.innerText = `Błąd: ${error}`;
+            }
+        }
+    </script>
+    <div class="container">
+        <button class="btn2" onclick="submitCode()">Sprawdź swoj kod</button>
+
+        <a button class="btn" href= "jstest.html" >Rozpocznij test mistrzu</a>
+    </div>
+
+</body>
+</html>

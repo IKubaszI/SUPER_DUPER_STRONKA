@@ -20,7 +20,7 @@
       margin: 0 auto;
       padding: 20px;
       box-sizing: border-box;
-      position: relative; /* Dodane, aby można było pozycjonować fajerwerki względem kontenera */
+      position: relative;
     }
 
     .header {
@@ -89,7 +89,7 @@
       font-size: 16px;
       background-color: #4CAF50;
       color: white;
-      transition: background-color 0.3s ease; /* Dodane powolne przejście koloru tła */
+      transition: background-color 0.3s ease;
     }
 
 .btn2 {
@@ -104,15 +104,15 @@
       font-size: 16px;
       background-color: #0066FF;
       color: white;
-      transition: background-color 0.3s ease; /* Dodane powolne przejście koloru tła */
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #FF5733; /* Kolor tła po najechaniu */
+      background-color: #FF5733;
     }
 
     .btn2:hover {
-      background-color: #FF5733; /* Kolor tła po najechaniu */
+      background-color: #FF5733;
     }
     
     .menu-button {
@@ -148,13 +148,21 @@
     <h2>Informacje na temat języka</h2>
   </header>
   <div class="info">
-    <img src="autor.png" alt="Author">
+    <img src="/focie/python.png" alt="Author">
     <div class="info-text">
-      <h3><p>Tutaj znajdziesz informacje o języku Python.</p></h3>
-     <h3> <p>Python to dynamiczny, wysokopoziomowy język programowania, który jest szeroko stosowany w różnych dziedzinach, w tym web development, data science, sztuczna inteligencja i wiele innych.</p> </h3>
+     <h3> <p>Python to dynamiczny, wysokopoziomowy język programowania, który jest szeroko stosowany w różnych dziedzinach,
+       w tym web development, data science, sztuczna inteligencja i wiele innych.
+       Python to interpretowany język programowania wysokiego poziomu, co oznacza,
+       że jego składnia jest przejrzysta i zrozumiała dla ludzi, co ułatwia pisanie i czytanie kodu.
+       Najbardziej podstawową funkcją jest "print("Tekst do wydrukowania")". Można również drukować polske znaki.
+     jest </p> </h3>
     </div>
   </div>
-
+  <h2>Postępuj jak na filmiku aby zrozumieć tę pradawną wiedzę :)</h2>
+  <video width="320" height="240" controls>
+    <source src="sciezka/do/filmu.mp4" type="video/mp4">
+    Twoja przeglądarka nie obsługuje elementu video.
+  </video>
   <h2>Przydatne informacje na temat kodu</h2>
 
   <div class="code-section">
@@ -163,32 +171,25 @@
   </div>
 
 <script>
-  // Funkcja wywołująca animację fajerwerków
+
   function fireworks() {
-    // Pobranie elementu div z animacją fajerwerków
     const fireworksDiv = document.getElementById('fireworks');
-    // Dodanie klasy 'fireworks' do diva, co wywoła animację
     fireworksDiv.classList.add('fireworks');
   }
 
-  // Funkcja sprawdzająca kod
   function submitCode() {
     const codeInput = document.getElementById('codeInput');
     const codeOutput = document.getElementById('codeOutput');
 
-    // Wyczyszczenie poprzedniego wyniku
     codeOutput.innerText = '';
 
-    // Pobranie kodu wpisanego przez użytkownika
     const userCode = codeInput.value;
 
     try {
-      // Wykonanie kodu Pythona
       const result = eval(`(function(){${userCode}})()`);
-      // Wyświetlenie wyniku w polu wyjściowym
       codeOutput.innerText = result;
     } catch (error) {
-      // Obsługa błędów
+
       codeOutput.innerText = `Błąd: ${error}`;
     }
   }
@@ -198,5 +199,6 @@
 
   <a button class="btn" href= "pythontest.html" >Rozpocznij test mistrzu</a>
 </div>
+
 </body>
 </html>
