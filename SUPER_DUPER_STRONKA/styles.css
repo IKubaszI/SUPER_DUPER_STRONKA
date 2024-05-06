@@ -205,44 +205,44 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  color: white; /* Biały kolor tekstu */
+  color: white;
   text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
-  font-size: 1.1rem; /* This ensures that children occupy the full width */
+  font-size: 1.1rem;
   font-size: 30px;
 }
 
 .wstep, .kontynuacja {
   margin: 0;
-  padding: 20px 0; /* Adjust the vertical padding to create more space */
-  flex: 1; /* This will make them stretch to fill the parent container */
-  text-align: justify; /* This ensures the text is spread out from edge to edge */
+  padding: 20px 0;
+  flex: 1;
+  text-align: justify;
 }
 
 .wstep + .kontynuacja {
-  margin-top: 50px; /* This adds a large space between the `wstep` and `kontynuacja` sections */
+  margin-top: 50px;
 }
 .profile-container {
   display: flex;
-  justify-content: space-evenly; /* Adjust spacing between profiles */
+  justify-content: space-evenly;
 }
 
 .profile {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the content vertically */
-  margin: 0 10px; /* Space between the profiles */
+  align-items: center;
+  margin: 0 10px;
 }
 
 .image-emoji-container {
   display: flex;
-  align-items: center; /* Aligns image and emoji horizontally */
+  align-items: center;
 }
 
 .profile-pic {
-  border: 3px solid white; /* White border around the image */
-  border-radius: 50%; /* Circular image */
-  width: 150px; /* Image width */
-  height: 150px; /* Image height */
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
 
 }
@@ -252,30 +252,29 @@ h1 {
 }
 
 .emoji {
-  font-size: 1.5rem; /* Emoji size */
+  font-size: 1.5rem;
   margin-left: -100px;
   margin-right: -100px;
   font-size: 3rem;
 
-  /* Negative margin to pull the emoji closer to the image */
 }
 
 .name {
-  margin-top: 10px; /* Space between image/emoji container and name */
-  font-size: 3rem; /* Name font size */
+  margin-top: 10px;
+  font-size: 3rem;
 }
 @keyframes rainbow {
-    0% { color: #ff0000; } /* Red */
-    10% { color: #ff8000; } /* Orange */
-    20% { color: #ffff00; } /* Yellow */
-    30% { color: #00ff00; } /* Green */
-    40% { color: #00ffff; } /* Cyan */
-    50% { color: #0000ff; } /* Blue */
-    60% { color: #8000ff; } /* Indigo */
-    70% { color: #ff00ff; } /* Magenta */
-    80% { color: #ff0080; } /* Pink */
-    90% { color: #ffbf00; } /* Gold */
-    100% { color: #ff0000; } /* Red */
+    0% { color: #ff0000; }
+    10% { color: #ff8000; }
+    20% { color: #ffff00; }
+    30% { color: #00ff00; }
+    40% { color: #00ffff; }
+    50% { color: #0000ff; }
+    60% { color: #8000ff; }
+    70% { color: #ff00ff; }
+    80% { color: #ff0080; }
+    90% { color: #ffbf00; }
+    100% { color: #ff0000; }
 }
 
 .rainbow-text {
