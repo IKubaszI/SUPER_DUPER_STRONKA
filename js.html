@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Language</title>
+    <title>JavaScript Language</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,9 +12,9 @@
             background: linear-gradient(to bottom, #0E5ED6, #9A9C3B);
             background-size: 120% 120%;
             min-height: 100vh;
+            color: white;
         }
 
-        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -66,7 +66,6 @@
         h2 {
             margin-top: 50px;
             text-align: center;
-
         }
 
         .container {
@@ -76,7 +75,14 @@
             box-sizing: border-box;
             text-align: center;
         }
+        h1 {
+            margin-left: 85px;
 
+            margin-top: 50px;
+            text-align: center;
+            color: #FFF; /* Zmiana koloru tekstu */
+            font-size: 24px; /* Zwiększenie wielkości czcionki */
+        }
         .btn {
             display: inline-block;
             padding: 14px 20px;
@@ -114,7 +120,13 @@
         .btn2:hover {
             background-color: #FF5733;
         }
+        img {
+            max-width: 100px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-right: 20px;
 
+        }
         .menu-button {
             display: inline-block;
             padding: 10px 20px;
@@ -143,25 +155,43 @@
 <div class="container">
     <a href="menu.html" class="menu-button">&#9776;</a>
     <header class="header">
-        <h1>Java Script</h1>
-        </h1>
+        <h1>JavaScript</h1>
+        <img src="focie/js.png" alt="Author">
         <h2>Informacje na temat języka</h2>
+
     </header>
     <div class="info">
-        <img src="focie/js.png" alt="Author">
+
         <div class="info-text">
-            <h3> <p>JavaScript jest jednym z najpopularniejszych języków programowania na świecie.
-                Jest szeroko stosowany do tworzenia interaktywnych stron internetowych,
-                aplikacji internetowych oraz serwerów. Poniżej znajdziesz podstawowe informacje na temat tego
-                języka oraz kilka wskazówek dotyczących jego nauki i praktyki. Podstawową składnią jest deklaracja zmiennych za pomocą "var", "let", "const".
-                Możemy tworzyć interaktywnych elementów na stronach internetowych.  </p> </h3>
+            <h3>
+                <p>
+                    JavaScript jest jednym z najpopularniejszych języków programowania na świecie. Jest szeroko stosowany do tworzenia interaktywnych stron internetowych, aplikacji internetowych oraz serwerów. JavaScript pozwala na dynamiczne manipulowanie zawartością stron, co umożliwia tworzenie interaktywnych elementów, takich jak galerie obrazów, formularze, a nawet gry przeglądarkowe.
+                </p>
+                <p>
+                    Jednym z podstawowych elementów składni JavaScript jest deklaracja zmiennych za pomocą słów kluczowych "var", "let" oraz "const". "Var" była tradycyjnie używana do deklaracji zmiennych, jednak wprowadzenie "let" i "const" wprowadziło bardziej precyzyjne zarządzanie zasięgiem zmiennych. "Let" jest używany do deklarowania zmiennych o zasięgu blokowym, natomiast "const" służy do deklarowania stałych, których wartości nie mogą być zmienione po przypisaniu.
+                </p>
+                <p>
+                    JavaScript jest językiem interpretowanym, co oznacza, że kod jest wykonywany bezpośrednio przez przeglądarkę internetową bez potrzeby kompilacji. Dzięki temu możliwe jest szybkie testowanie i debugowanie kodu. JavaScript jest również językiem wieloplatformowym, co oznacza, że działa na różnych systemach operacyjnych i urządzeniach.
+                </p>
+                <p>
+                    W ekosystemie JavaScript istnieje wiele bibliotek i frameworków, które ułatwiają tworzenie złożonych aplikacji. Przykłady to React, Angular i Vue.js do tworzenia interfejsów użytkownika, Node.js do programowania po stronie serwera oraz D3.js do wizualizacji danych. Każde z tych narzędzi oferuje unikalne funkcje i możliwości, które pozwalają programistom na efektywną pracę i rozwijanie nowoczesnych aplikacji.
+                </p>
+                <p>
+                    JavaScript odgrywa również kluczową rolę w technologii AJAX (Asynchronous JavaScript and XML), która umożliwia asynchroniczną komunikację z serwerem. Dzięki AJAX możliwe jest ładowanie danych z serwera bez potrzeby odświeżania całej strony, co poprawia doświadczenia użytkownika i sprawia, że aplikacje są bardziej responsywne.
+                </p>
+                <p>
+                    Ze względu na swoją popularność i szerokie zastosowanie, JavaScript jest jednym z najważniejszych języków programowania, które warto znać. Jego znajomość jest ceniona na rynku pracy, a umiejętność programowania w JavaScript otwiera wiele drzwi dla programistów w różnych branżach, od tworzenia stron internetowych po rozwój aplikacji mobilnych i oprogramowania serwerowego.
+                </p>
+            </h3>
         </div>
     </div>
     <h2>Postępuj jak na filmiku aby zrozumieć tę pradawną wiedzę :)</h2>
-    <video width="700" height="400" controls>
-        <source src="focie/FIML_INSTUKTARZOWY.mp4" type="video/mp4">
-        Twoja przeglądarka nie obsługuje elementu video.
-    </video>
+    <div class="video-container">
+        <video width="700" height="400" controls>
+            <source src="focie/FIML_INSTUKTARZOWY.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje elementu video.
+        </video>
+    </div>
     <h2>Przydatne informacje na temat kodu</h2>
 
     <div class="code-section">
@@ -170,12 +200,6 @@
     </div>
 
     <script>
-
-        function fireworks() {
-            const fireworksDiv = document.getElementById('fireworks');
-            fireworksDiv.classList.add('fireworks');
-        }
-
         function submitCode() {
             const codeInput = document.getElementById('codeInput');
             const codeOutput = document.getElementById('codeOutput');
@@ -188,16 +212,15 @@
                 const result = eval(`(function(){${userCode}})()`);
                 codeOutput.innerText = result;
             } catch (error) {
-
                 codeOutput.innerText = `Błąd: ${error}`;
             }
         }
     </script>
     <div class="container">
-        <button class="btn2" onclick="submitCode()">Sprawdź swoj kod</button>
-
-        <a button class="btn" href= "jstest.html" >Rozpocznij test mistrzu</a>
+        <button class="btn2" onclick="submitCode()">Sprawdź swój kod</button>
+        <a class="btn" href="jstest.html">Rozpocznij test mistrzu</a>
     </div>
+</div>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Language</title>
+    <title>Angular Framework</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,8 +12,8 @@
             background: linear-gradient(to bottom, #0E5ED6, #9A9C3B);
             background-size: 120% 120%;
             min-height: 100vh;
+            color: white;
         }
-
 
         .container {
             max-width: 1200px;
@@ -66,7 +66,6 @@
         h2 {
             margin-top: 50px;
             text-align: center;
-
         }
 
         .container {
@@ -132,7 +131,22 @@
             transition: background-color 0.2s;
             float: right;
         }
+        img {
+            max-width: 100px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-right: 20px;
 
+        }
+        h1 {
+            margin-left: 85px;
+
+            margin-top: 50px;
+            text-align: center;
+            color: #FFF; /* Zmiana koloru tekstu */
+            font-size: 24px; /* Zwiększenie wielkości czcionki */
+        }
+        }
         .menu-button:hover {
             background-color: #bd212d;
         }
@@ -144,26 +158,44 @@
     <a href="menu.html" class="menu-button">&#9776;</a>
     <header class="header">
         <h1>Angular</h1>
-        </h1>
-        <h2>Informacje na temat języka</h2>
+        <img src="focie/angular.png" alt="Author">
+        <h2>Informacje na temat frameworka</h2>
     </header>
     <div class="info">
-        <img src="focie/angular.png" alt="Author">
+
         <div class="info-text">
-            <h3> <p>Angular jest popularnym frameworkiem open-source do tworzenia
-                nowoczesnych aplikacji internetowych i mobilnych. Stworzony przez zespół
-                inżynierów z Google, Angular oferuje kompleksowe narzędzia i funkcje,
-                które umożliwiają programistom szybkie tworzenie skalowalnych i wydajnych aplikacji.
-                Opiera się na języku TypeScript, co pozwala na bardziej wydajne i bezpieczne pisanie kodu.
-                Angular wykorzystuje architekturę komponentową, co ułatwia tworzenie modularnych i łatwych w
-                utrzymaniu aplikacji.  </p> </h3>
+            <h3>
+                <p>
+                    Angular jest popularnym frameworkiem open-source do tworzenia nowoczesnych aplikacji internetowych i mobilnych. Stworzony przez zespół inżynierów z Google, Angular oferuje kompleksowe narzędzia i funkcje, które umożliwiają programistom szybkie tworzenie skalowalnych i wydajnych aplikacji.
+                </p>
+                <p>
+                    Opiera się na języku TypeScript, co pozwala na bardziej wydajne i bezpieczne pisanie kodu. TypeScript jest nadzbiorem JavaScript, który dodaje statyczne typowanie, co pomaga w wykrywaniu błędów na etapie kompilacji, zanim kod zostanie uruchomiony.
+                </p>
+                <p>
+                    Angular wykorzystuje architekturę komponentową, co ułatwia tworzenie modularnych i łatwych w utrzymaniu aplikacji. Komponenty w Angularze są samodzielnymi jednostkami, które można łatwo wielokrotnie wykorzystywać, testować i zarządzać nimi niezależnie od reszty aplikacji.
+                </p>
+                <p>
+                    Jednym z kluczowych elementów Angulara jest system szablonów, który umożliwia tworzenie dynamicznych i interaktywnych interfejsów użytkownika za pomocą prostego HTML-a. Szablony mogą być wzbogacane o wyrażenia Angulara, które umożliwiają dwukierunkowe wiązanie danych, dynamiczne aktualizowanie widoków oraz obsługę zdarzeń użytkownika.
+                </p>
+                <p>
+                    Angular oferuje również rozbudowany system routingu, który pozwala na zarządzanie nawigacją w aplikacji. Dzięki temu możliwe jest tworzenie wielostronicowych aplikacji z łatwością przechodzenia między różnymi widokami bez przeładowywania całej strony.
+                </p>
+                <p>
+                    Dodatkowo, Angular posiada zaawansowane narzędzia do testowania aplikacji, takie jak Karma i Jasmine, które umożliwiają pisanie testów jednostkowych i integracyjnych, co jest kluczowe dla utrzymania wysokiej jakości kodu i niezawodności aplikacji.
+                </p>
+                <p>
+                    Dzięki swojej wszechstronności i silnemu wsparciu społeczności, Angular jest jednym z najważniejszych frameworków do tworzenia nowoczesnych aplikacji internetowych. Jego znajomość jest ceniona na rynku pracy, a umiejętność tworzenia aplikacji w Angularze otwiera wiele możliwości zawodowych dla programistów w różnych branżach.
+                </p>
+            </h3>
         </div>
     </div>
     <h2>Postępuj jak na filmiku aby zrozumieć tę pradawną wiedzę :)</h2>
-    <video width="700" height="400" controls>
-        <source src="focie/FIML_INSTUKTARZOWY.mp4" type="video/mp4">
-        Twoja przeglądarka nie obsługuje elementu video.
-    </video>
+    <div class="video-container">
+        <video width="700" height="400" controls>
+            <source src="focie/FIML_INSTUKTARZOWY.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje elementu video.
+        </video>
+    </div>
     <h2>Przydatne informacje na temat kodu</h2>
 
     <div class="code-section">
@@ -172,12 +204,6 @@
     </div>
 
     <script>
-
-        function fireworks() {
-            const fireworksDiv = document.getElementById('fireworks');
-            fireworksDiv.classList.add('fireworks');
-        }
-
         function submitCode() {
             const codeInput = document.getElementById('codeInput');
             const codeOutput = document.getElementById('codeOutput');
@@ -190,16 +216,15 @@
                 const result = eval(`(function(){${userCode}})()`);
                 codeOutput.innerText = result;
             } catch (error) {
-
                 codeOutput.innerText = `Błąd: ${error}`;
             }
         }
     </script>
     <div class="container">
-        <button class="btn2" onclick="submitCode()">Sprawdź swoj kod</button>
-
-        <a button class="btn" href= "angulartes.html" >Rozpocznij test mistrzu</a>
+        <button class="btn2" onclick="submitCode()">Sprawdź swój kod</button>
+        <a class="btn" href="angulartes.html">Rozpocznij test mistrzu</a>
     </div>
+</div>
 
 </body>
 </html>
